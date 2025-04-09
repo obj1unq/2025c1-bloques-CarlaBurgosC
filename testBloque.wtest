@@ -10,10 +10,11 @@ describe "pepita volar" {
 
   test "mi asserter" {
     //Espero que mi asserter diga que está mal que pepita.volar(10) lanza error (ya que no lo lanza)
-    assert.notThat( miAsserter.assertException( { pepita.volar(10) } ))
+    assert.notThat( miAsserter.assertException( { pepita.volar(10) } )) // 
     assert.equals(80, pepita.energia())
     //Espero que mi asserter diga que está bien que pepita.volar(100) lanza error
     assert.that( miAsserter.assertException( { pepita.volar(1000) } ))
   }
+
 
 }
