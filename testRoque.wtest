@@ -1,0 +1,42 @@
+import bloques.*
+
+describe "roque"{
+
+    test "rutina1"{
+        //roque.ave(pepita)
+        roque.rutina({ ave => 
+            ave.volar(5)
+            ave.comer(alpiste)
+        })
+        roque.entrenar()
+
+        assert.equals(105, pepita.energia())//assert puede ser sobre un objeto en particular para el test
+    }
+
+     test "rutina2"{
+        //roque.ave(pepita)
+        roque.rutina({ ave => 
+            ave.volar(5)
+            ave.comer(alpiste)
+            ave.volar(5)
+        })
+        roque.entrenar()
+
+        assert.equals(90, pepita.energia())//assert puede ser sobre un objeto en particular para el test
+    }
+    test "rutina3"{
+        //roque.ave(pepita)
+        roque.rutina({ ave => 
+            
+            ave.comer(alpiste)
+            ave.volar(1000)
+            ave.comer(alpiste)
+        })
+        roque.entrenar() //debe romper
+
+        assert.throwsException({roque.entrenar()})
+
+        assert.equals(120, pepita.energia())//assert puede ser sobre un objeto en particular para el test
+    }
+}
+
